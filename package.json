@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "main": "server.js",
   "license": "MIT",
+    "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint . --fix",
+    "db:init": "dropdb --if-exists nyc_soundcheck && createdb nyc_soundcheck",
+    "db:reset": "./scripts/resetDB",
+    "db:seed": "./scripts/seedDB"
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",

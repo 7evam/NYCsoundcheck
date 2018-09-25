@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const { db } = require('../models');
+
+//async call since we're awaiting a promise
+(async () => {
+  await db.sync({ force: true });
+  db.close();
+})();
+
+//this is a node script that runs in bash.
+
+//it accesses db from the exports of the index.js file from ../models
+
+//it then uses an async function to run the db script which is here:
+
+// const db = new Sequelize({
+//   database: 'nyc_soundcheck',
+//   dialect:  'postgres',
+//   define:   {
+//     underscored: true,
+//     returning:   true,
+//   },
+// });
+
+
+//this needs to be done async becase the db.close needs to wait for the sync to happen first

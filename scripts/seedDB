@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+const { Artist, Genre, Album, Upcoming_show, db } = require('../models');
+const { artists, genres, albums, upcoming_shows } = require('../data');
+
+
+(async () => {
+  // insert colors
+  /* await Color.bulkCreate() */
+
+  // first insert the artists
+  await Artist.bulkCreate(artists.map(([name, desc, img_url, genre1, genre2, genre3]) => ({ name, desc, img_url})));
+//bulk create expects an array of objects that have keys
+//this function takes the array [name,img_url] and makes it an object
+//this is a sequelize method
+
+  // then insert the genres
+  await Genre.bulkCreate(genres.map(([name]) => ({name})));
+
+  await Album.bulkCreate(genres.map(([name,img_url,date,artist]) => ({name, img_url, date, artist})));
+
+  await Upcoming_show.bulkCreate(genres.map(([date, venue]) => ({date, venue})));
+
+  db.close();
+})();
