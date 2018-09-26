@@ -11,6 +11,7 @@ module.exports = {
     ['Vinegar Mother','Vinegar Mother is carving  its own niche up and down the East Coast\'s live music circuit. The psychedelic soul-rock  quintet has attracted fans from Brooklyn to Burlington, and  everywhere  in  between.','https://s3.amazonaws.com/static.imposemagazine.com/wp-content/uploads/2018/03/Vinegar-Mother-Hi-Res-1024x683.jpg'],
     ['Woolly Mammals','Woolly Mammals is an alternative-soul quartet from Brooklyn, New York. Since their debut release, \'Cheap Talk\' in January 2017 the band has received praise from Rolling Stone France, No Treble Magazine, Live for Live Music, and Nextbop. With the recent release of their debut EP, When You Get This, in January 2018, the band continues to deliver their own haughtily original brand of techno-funk, layering a talking bass vocoder on top ofsoaring synthesizers, swampy subs, and acid-jazz backbeats.','https://pbs.twimg.com/media/DJSyIcWXkAAO98R.jpg']
   ],
+  //genre name
   genres: [
   ['funk'],
   ['jazz'],
@@ -19,6 +20,17 @@ module.exports = {
   ['experimental']
   ],
 
-  
+  //name,img_url,artist
+  albums:[
+  	['Mango City', 'https://f4.bcbits.com/img/a3147368541_10.jpg'],
+  	['All Flowers In Time', 'https://f4.bcbits.com/img/a0708663422_10.jpg'],
+  	['There\'s a Virus Going On','https://f4.bcbits.com/img/a0703511586_10.jpg']
+  ],
+//date, venue
+  upcoming_shows:[
+ 	 ['2018-10-26', 'Coney Island Baby'],
+ 	 ['2018-11-6', 'C\'mon Everybody'],
+ 	 ['2018-11-8', 'Pianos']
+ 	]
 
 }

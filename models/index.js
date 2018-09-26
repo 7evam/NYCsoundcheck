@@ -40,19 +40,16 @@ const Album = db.define('album', {
   	type: 		Sequelize.TEXT,
   	allowNull: 	false,
   },
-    date: {
-  	type: 		Sequelize.DATEONLY,
-  },
 });
 
 const Upcoming_show = db.define('upcoming_show', {
+  date: {
+    type:     Sequelize.DATEONLY,
+    allowNull:  false,
+  },
   venue: {
     type:      Sequelize.STRING(64),
     allowNull: false,
-  },
-    date: {
-  	type: 		Sequelize.DATEONLY,
-  	allowNull:  false,
   },
 });
 
