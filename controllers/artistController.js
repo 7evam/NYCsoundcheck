@@ -28,6 +28,48 @@ module.exports = {
 
     }
   },
-
+  async create(req, res, next) {
+    try {
+      const { name, desc, img_url } = req.body;
+      const newArtist = await Artist.create({
+        name: name,
+        desc: desc,
+        img_url: img_url,
+      });
+      next()
+    } catch (e) {
+      console.error(e);
+      next(e)
+    }
+  },
+    async update(req, res, next) {
+    try {
+      const id = parseInt(req.params.id, 10);
+      const { name, desc, img_url } = req.body;
+      const [,artist] = await Artist.update({
+        name,
+        desc,
+        img_url,
+      }, {
+        where: {id}
+      });
+      next()
+    } catch (e) {
+      console.error(e);
+      next(e)
+    }
+  },
+    async destroy(req, res, next) {
+    try {
+      const id = parseInt(req.params.id, 10)
+      await Artist.destroy({
+        where: {id},
+      });
+      next()
+    } catch (e) {
+      console.error(e);
+      next(e);
+    }
+  },
 
 };

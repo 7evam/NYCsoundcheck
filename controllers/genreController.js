@@ -28,6 +28,45 @@ module.exports = {
 
     }
   },
+    async create(req, res, next) {
+    try {
+      const { name } = req.body;
+      const newGenre = await Genre.create({
+        name,
+      });
+      next()
+    } catch (e) {
+      console.error(e);
+      next(e)
+    }
+  },
+    async update(req, res, next) {
+    try {
+      const id = parseInt(req.params.id, 10);
+      const { name } = req.body;
+      const [,genre] = await Genre.update({
+        name,
+      }, {
+        where: {id}
+      });
+      next()
+    } catch (e) {
+      console.error(e);
+      next(e)
+    }
+  },
+    async destroy(req, res, next) {
+    try {
+      const id = parseInt(req.params.id, 10)
+      await Genre.destroy({
+        where: {id},
+      });
+      next()
+    } catch (e) {
+      console.error(e);
+      next(e);
+    }
+  },
 
 
 };
