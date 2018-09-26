@@ -4,9 +4,18 @@ module.exports = {
     res.json(res.locals)
   },
 
+      showOneGenre(req, res) {
+    res.json(res.locals)
+  },
+
     showArtists(req, res) {
     res.json(res.locals)
   },
+
+    showGenres(req, res) {
+    res.json(res.locals)
+  },
+
 
     showJSON(req, res) {
     res.json(res.locals)
