@@ -1,5 +1,5 @@
 module.exports = {
-//name, desc, img_url
+//name, desc, img_url, [genre1,genre2,genre3]
   artists: [
     ['Jachary', 'Originally from Boston, 25-year-old Jachary is now based in Bushwick, New York. On his debut album, "There\'s A Virus Going On" he plays most of the instruments, produces, and does vocals on each track. His versatility when it comes to every aspect of creating music allowshim to craft a unique sound that blends elements from funk, rock, and hip hop.','http://www.allthingsgomusic.com/wp-content/uploads/2017/07/Jachary-1.jpg'],
     ['Jazze Belle', 'Jazze Belle is a duo comprised of producer/instrumentalist Jett and singer/songwriter Taylor Simone. Both hail from different parts of the country (Taylor\'s from LA and Jett\'s from Richmond), but the two share a sound influenced by jazzy vocals, soulful chords, and hip hop digital production. Playing everywhere in NYC from Nola, Darling to Baby\'s All Right, they are equipped with a musical tenacity and talent to match.','http://images3.wikia.nocookie.net/__cb20111027164827/harrypotter/images/3/3f/H_final.jpg'],
@@ -22,9 +22,10 @@ module.exports = {
 
   //name,img_url,artist
   albums:[
-  	['Mango City', 'https://f4.bcbits.com/img/a3147368541_10.jpg'],
-  	['All Flowers In Time', 'https://f4.bcbits.com/img/a0708663422_10.jpg'],
-  	['There\'s a Virus Going On','https://f4.bcbits.com/img/a0703511586_10.jpg']
+  	['Mango City', 'https://f4.bcbits.com/img/a3147368541_10.jpg',7],
+  	['All Flowers In Time', 'https://f4.bcbits.com/img/a0708663422_10.jpg',5],
+  	['There\'s a Virus Going On','https://f4.bcbits.com/img/a0703511586_10.jpg',1],
+    ['Go To Bed Standing Up','https://i1.sndcdn.com/artworks-000209628840-dh3giq-t500x500.jpg',2]
   ],
 //date, venue
   upcoming_shows:[

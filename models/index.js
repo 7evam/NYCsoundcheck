@@ -40,6 +40,9 @@ const Album = db.define('album', {
   	type: 		Sequelize.TEXT,
   	allowNull: 	false,
   },
+    artist_id: {
+    type:     Sequelize.SMALLINT,
+  },
 });
 
 const Upcoming_show = db.define('upcoming_show', {

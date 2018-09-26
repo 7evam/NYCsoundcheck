@@ -14,7 +14,7 @@ const { artists, genres, albums, upcoming_shows } = require('../data');
   // then insert the genres
   await Genre.bulkCreate(genres.map(([name]) => ({name})));
 
-  await Album.bulkCreate(albums.map(([name, img_url]) => ({name, img_url})));
+  await Album.bulkCreate(albums.map(([name, img_url, artist_id]) => ({name, img_url, artist_id})));
 
 await Upcoming_show.bulkCreate(upcoming_shows.map(([date, venue]) => ({date, venue})));
 
