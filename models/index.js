@@ -28,6 +28,7 @@ const Genre = db.define('genre', {
   name: {
     type:      Sequelize.STRING(64),
     allowNull: false,
+    unique: true,
   },
 });
 
@@ -40,12 +41,10 @@ const Album = db.define('album', {
   	type: 		Sequelize.TEXT,
   	allowNull: 	false,
   },
-    artist_id: {
-    type:     Sequelize.SMALLINT,
-  },
 });
 
-const Upcoming_show = db.define('upcoming_show', {
+
+const Show = db.define('show', {
   date: {
     type:     Sequelize.DATEONLY,
     allowNull:  false,
@@ -58,8 +57,10 @@ const Upcoming_show = db.define('upcoming_show', {
 
 //associations
 
-Upcoming_show.belongsToMany(Artist, { through: 'artist_show_xref'});
-Artist.belongsToMany(Upcoming_show, { through: 'artist_show_xref'});
+Show.belongsToMany(Artist, { through: 'artist_show_xref'});
+Artist.belongsToMany(Show, { through: 'artist_show_xref'});
+
+
 
 Genre.belongsToMany(Artist, { through: 'artist_genre_xref'});
 Artist.belongsToMany(Genre, { through: 'artist_genre_xref'});
@@ -73,7 +74,7 @@ module.exports = {
 	Artist, 
 	Genre, 
 	Album, 
-	Upcoming_show, 
+	Show, 
 	db,
 };
 

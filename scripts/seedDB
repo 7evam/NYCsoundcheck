@@ -1,22 +1,62 @@
 #!/usr/bin/env node
-const { Artist, Genre, Album, Upcoming_show, db } = require('../models');
-const { artists, genres, albums, upcoming_shows } = require('../data');
+const { Artist, Genre, Album, Show, db } = require('../models');
+const { artists, genres, albums, shows } = require('../data');
 
 
 (async () => {
+	//loop over artists data
+  	//for each artist insert into db
+  await Promise.all(artists.map(async ([name, desc, img_url, genres]) => {
+	  	try {
+
+		  	//find or create inserts the genre names into the genre table avoiding colisions on the unique names
+		  	//it then creates an array of promises
+		  	//we resolve the array of promises with promise.all and are left with an array of genre names
+		  	//promise.all is itself a promise and must be resolved with await
+		  	const newGenres = await Promise.all(genres.map(name => 	
+		  		Genre.findOrCreate({ where: { name } }).then(([g]) => g)
+			))
+		 
+
+		  	const newArtist = await Artist.create({ name, desc, img_url });
+
+		  	return newArtist.setGenres(newGenres);
+
+	  	} catch (e) {
+	  		throw(e.message)
+	  	}
+
+  }))
+
+
+
+  await Promise.all([
+  	Album.bulkCreate(albums.map(([name, img_url, artist_id]) => ({name, img_url, artist_id}))),
+    Promise.all(shows.map( async ([date, venue, artists]) => {
+    	//creates shows and makes associations 
+    	const newShow = await Show.create({date, venue})
+    	return newShow.setArtists(artists);
+    	}))
+
+  ]);
+
+  
+
+ // await Genre.bulkCreate(genres.map(([name]) => ({name})));
 
   // first insert the artists
-  await Artist.bulkCreate(artists.map(([name, desc, img_url]) => ({ name, desc, img_url})));
+  // await Artist.bulkCreate(
+  // 	artists.map(([name, desc, img_url]) => ({ name, desc, img_url}))
+
+  // 	);
 //bulk create expects an array of objects that have keys
 //this function takes the array [name,img_url] and makes it an object
 //this is a sequelize method
 
   // then insert the genres
-  await Genre.bulkCreate(genres.map(([name]) => ({name})));
 
-  await Album.bulkCreate(albums.map(([name, img_url, artist_id]) => ({name, img_url, artist_id})));
 
-await Upcoming_show.bulkCreate(upcoming_shows.map(([date, venue]) => ({date, venue})));
+
 
   db.close();
 })();
