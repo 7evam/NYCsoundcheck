@@ -7,6 +7,7 @@ module.exports = {
     try {
       res.locals.artists = await Artist.findAll({
         rejectOnEmpty: true,
+        include:[ Genre ],
       });
       next();
     } catch (e) {

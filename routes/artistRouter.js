@@ -7,7 +7,13 @@ const artistRouter = express.Router({mergeParams:true});
 
 artistRouter.route('/:id')
 //need to also show albums where album.artist_id = artist.id AND shows where artist.id = upcoming_shows.artist.id
-  .get(artists.getOneArtist, albums.getOneAlbum, views.showOneArtist, views.showOneAlbum)//albums.getAlbums, views.showAlbums
+  .get(artists.getOneArtist, albums.getOneAlbum, views.showOneArtist, views.showOneAlbum,
+  	(req, res) => {
+  		const { name } = req.user;
+  		res.locals.name = name;
+  		res.render('artists.jsx')
+  	})
+  //albums.getAlbums, views.showAlbums
    //then get views.showJSON, then views.notFound (as outlined in artistRouter.use below)
   .put(artists.update, views.handleUpdate, views.badUpdate)
   .delete(artists.destroy, views.handleDestroy);
