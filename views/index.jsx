@@ -8,20 +8,30 @@ function index({artists}) {
     
   return (
   	<DefaultLayout>
-    <div>
+   
    
       <p>
 Welcome to
 REACT VIEWS
       </p>
 
-   
-      	{artists.map(artist => <p> <img src={artist.img_url} height='200px'/> - {artist.name}</p>)}
 
+	
+  
+<div class="container is-fluid">
+  <div class="columns is-multiline">
+		{artists.map((artist) => 	
+   		<div class="column is-one-third">
+    	 <p class='title'>{artist.name}</p>
+   		<img src={artist.img_url} />
+     	</div>	
+	)}	
+</div>	 
+</div>
    
   
      
-</div>
+
 </DefaultLayout>
   );
 
