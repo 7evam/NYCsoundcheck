@@ -13,7 +13,14 @@ module.exports = {
   },
 
     showArtists(req, res) {
-    res.json(res.locals)
+      res.format({
+        json(){
+          res.json(res.locals);
+        },
+        html(){
+          res.render('index');
+        }
+      });
   },
 
     showGenres(req, res) {
