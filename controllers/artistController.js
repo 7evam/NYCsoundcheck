@@ -52,16 +52,18 @@ module.exports = {
     try {
       const { name, desc, img_url } = req.body;
       const newArtist = await Artist.create({
-        name: name,
-        desc: desc,
-        img_url: img_url,
+        name,
+        desc,
+        img_url,
       });
+      //res.locals.artist = newArtist; //maybe
       next()
     } catch (e) {
       console.error(e);
       next(e)
     }
   },
+
     async update(req, res, next) {
     try {
       const id = parseInt(req.params.id, 10);

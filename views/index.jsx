@@ -5,7 +5,7 @@ import DefaultLayout from './DefaultLayout';
 
 // Contrived example to show how one might use Flow type annotations
 
-function index({artists,genres}) {
+function index({artists,genres, title}) {
 			
 console.log(genres)
 

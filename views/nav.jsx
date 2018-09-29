@@ -41,15 +41,10 @@ const Nav = () => (
       <div className="navbar-end">
        
          
-            <div className="navbar-item has-dropdown is-hoverable">
-              <div className="navbar-link" role="menuitem">
-                Genres
-              </div>
-              <div className="navbar-dropdown">
-                <a className="navbar-item" href="/profile">Profile</a>
-                <hr className="navbar-divider" />
-                <a className="navbar-item" href="/auth/login?_method=DELETE">Logout</a>
-              </div>
+            <div className="navbar-item is-hoverable">
+             
+                <a className = "navbar-link" href="/newArtist">Add New Artist</a>
+              
             </div>
          
             <div className="navbar-item">

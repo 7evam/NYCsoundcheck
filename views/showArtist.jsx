@@ -17,7 +17,9 @@ function showArtist({artists, id, albums}) {
 	if(albums==null){
 		showAlbumInfo = "There are no albums to show here!"
 	} else {
-		showAlbumInfo = albums.name
+		showAlbumInfo = (<div><p>{albums.name}</p> <img className ="albumImage" src={albums.img_url} /> </div>)
+		//console.log("Number of albums" + albums.name)
+		// showAlbumInfo = <img class="albumImage" src={artists.img_url} />
 	}
 
 
@@ -31,7 +33,7 @@ Welcome to REACT VIEWS
 
       <div className='content'>
       	<p className='title'>{artists.name}</p>
-      	<img class="showImage" src={artists.img_url} />
+      	<img className ="showImage" src={artists.img_url} />
       	<p class='desc'>{artists.desc}</p>
       	<hr />
       	<h4>Genres:</h4>

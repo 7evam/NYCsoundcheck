@@ -33,7 +33,7 @@ module.exports = {
 //FROM artists 
 //JOIN artist_genre_xref ON (artist_genre_xref.artist_id = artists.id) 
 //JOIN genres ON (genres.id = artist_genre_xref.genre_id) 
-//WHERE genres.id = 3;
+//WHERE genres.id = req.params.id;
 
     async getArtistsGenre(req, res, next) {
     try {

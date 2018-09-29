@@ -28,6 +28,10 @@ app.get('/', (req, res) => {
    res.render('home')
  });
 
+app.get('/newArtist', (req, res) => {
+   res.render('newArtist')
+ });
+
 //fetch api
 // app.get('/',(req,res)=> {
 
