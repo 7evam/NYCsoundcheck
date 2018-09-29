@@ -2,6 +2,8 @@ const express = require('express');
 const views   = require('../controllers/viewController');
 const artists = require('../controllers/artistController'); 
 const albums  = require ('../controllers/albumController');
+const genres  = require ('../controllers/genreController');
+
 
 const artistRouter = express.Router({mergeParams:true});
 

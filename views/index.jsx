@@ -5,8 +5,10 @@ import DefaultLayout from './DefaultLayout';
 
 // Contrived example to show how one might use Flow type annotations
 
-function index({artists}) {
-    
+function index({artists,genres}) {
+			
+console.log(genres)
+
   return (
   	<DefaultLayout>
    
@@ -20,9 +22,13 @@ Welcome to REACT VIEWS
   
 <div className="container is-fluid">
   <div className="columns is-multiline">
-		{artists.map((artist) => 	
+		{artists.map((artist) => 
+
    		<div className="column is-one-third">
     	 <a href={'http://localhost:3100/artists/'+artist.id} className='title'>{artist.name}</a> <img src={artist.img_url} />
+     {/*	<p>{(artist.genres).map((g) =>
+     		{g.name}
+     	)}</p> */}
      	</div>	
 	)}	
 </div>	 

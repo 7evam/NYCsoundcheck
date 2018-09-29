@@ -1,6 +1,17 @@
 module.exports = {
 
     showOneArtist(req, res) {
+      res.format({
+        json(){
+          res.json(res.locals);
+        },
+        html(){
+          res.render('showArtist');
+        }
+      });
+  },
+
+  showArtistsGenre(req, res) {
     res.json(res.locals)
   },
 

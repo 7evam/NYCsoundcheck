@@ -28,6 +28,19 @@ module.exports = {
 
     }
   },
+    async getArtistsGenre(req, res, next) {
+    try {
+      const id = Number.parseInt(req.params.id, 10);
+      res.locals.genres = await Genre.findOne({
+        where: { id: req.params.id },
+        rejectOnEmpty: false,
+      });
+      next();
+    } catch (e) {
+      next(e)
+
+    }
+  },
     async create(req, res, next) {
     try {
       const { name } = req.body;

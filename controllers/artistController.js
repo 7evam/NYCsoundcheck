@@ -20,6 +20,7 @@ module.exports = {
     try {
       const id = Number.parseInt(req.params.id, 10);
       res.locals.artists = await Artist.findOne({
+        include: [ Genre ],
         where: { id },
         rejectOnEmpty: true,
       });
