@@ -19,6 +19,10 @@ module.exports = {
     res.json(res.locals)
   },
 
+    showArtistsOfGenre(req, res) {
+    res.json(res.locals)
+  },
+
   showOneAlbum(req, res) {
     res.json(res.locals)
   },

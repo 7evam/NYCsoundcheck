@@ -9,7 +9,7 @@ function showArtist({artists, id, albums}) {
 	//get artist genres into a string
 	let artistGenres = [];
 	for(let i=0;i<artists.genres.length;i++){
-		artistGenres.push(artists.genres[i].name+ " ")
+		artistGenres.push(<span class='tag is-info is-large'> {artists.genres[i].name} </span>)
 	}
 
 	//artist album info
@@ -31,12 +31,17 @@ Welcome to REACT VIEWS
 
       <div className='content'>
       	<p className='title'>{artists.name}</p>
-      	<img src={artists.img_url} />
-      	<p>{artists.desc}</p>
-      	<p>{artists.genres[0].name}</p>
-      	<p> 
-      	{artistGenres}</p>
+      	<img class="showImage" src={artists.img_url} />
+      	<p class='desc'>{artists.desc}</p>
+      	<hr />
+      	<h4>Genres:</h4>
+      	{artistGenres}
+      	<hr />
+      	<h4>Albums</h4>
       	<p>{showAlbumInfo}</p>
+
+      	<hr />
+      	<h4>Upcoming Shows</h4>
 
 
       

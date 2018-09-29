@@ -16,6 +16,24 @@ module.exports = {
     }
   },
 
+    async artistsOfGenre (req, res, next) {
+    let filter = {};
+    try {
+      if ('genre_id' in req.params) {
+        const { genre_id } = req.params;
+        filter = { where: { genre_id:artist_id } };
+      }
+      res.locals.artists = await Artist.findAll({
+        ...filter,
+        where: {id: req.params.id},
+        rejectOnEmpty: false,
+      });
+      next();
+    } catch (e) {
+      next(e);
+    }
+  },
+
     async getOneArtist(req, res, next) {
     try {
       const id = Number.parseInt(req.params.id, 10);
@@ -27,9 +45,9 @@ module.exports = {
       next();
     } catch (e) {
       next(e)
-
     }
   },
+
   async create(req, res, next) {
     try {
       const { name, desc, img_url } = req.body;

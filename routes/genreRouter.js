@@ -1,11 +1,12 @@
 const express = require('express');
 const views   = require('../controllers/viewController');
 const genres = require('../controllers/genreController'); 
+const artists = require('../controllers/artistController'); 
 
 const genreRouter = express.Router({mergeParams:true});
 
 genreRouter.route('/:id/artists')
-  .get(genres.getOneGenre, views.showOneGenre) //then get views.showJSON, then views.notFound (as outlined in artistRouter.use below)
+  .get(artists.artistsOfGenre, views.showArtistsOfGenre) //then get views.showJSON, then views.notFound (as outlined in artistRouter.use below)
   .put(genres.update, views.handleUpdate, views.badUpdate)
   .delete(genres.destroy, views.handleDestroy);
 

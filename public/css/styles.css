@@ -1,0 +1,32 @@
+img{
+	padding-top: 10px;
+	margin: 0 auto;
+}
+
+.title{
+	color: #B10DC9;
+	text-align: center;
+}
+
+.column{
+	text-align: center;
+}
+
+.content{
+	text-align: center;
+}
+
+.desc{
+	width:70%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.tag{
+	margin:10px;
+}
+
+.showImage{
+	max-width:65%;
+	max-height:65%;
+}

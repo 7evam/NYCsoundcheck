@@ -1,4 +1,5 @@
 const { Artist, Genre } = require('../models');
+const Sequelize = require ('sequelize');
 
 module.exports = {
 
@@ -11,7 +12,6 @@ module.exports = {
       next();
     } catch (e) {
       next(e)
-
     }
   },
 
@@ -19,20 +19,7 @@ module.exports = {
     try {
       const id = Number.parseInt(req.params.id, 10);
       res.locals.genres = await Genre.findOne({
-        where: { id },
-        rejectOnEmpty: true,
-      });
-      next();
-    } catch (e) {
-      next(e)
-
-    }
-  },
-    async getArtistsGenre(req, res, next) {
-    try {
-      const id = Number.parseInt(req.params.id, 10);
-      res.locals.genres = await Genre.findOne({
-        where: { id: req.params.id },
+       where: { id: req.params.id },
         rejectOnEmpty: false,
       });
       next();
@@ -41,6 +28,31 @@ module.exports = {
 
     }
   },
+
+//SELECT * 
+//FROM artists 
+//JOIN artist_genre_xref ON (artist_genre_xref.artist_id = artists.id) 
+//JOIN genres ON (genres.id = artist_genre_xref.genre_id) 
+//WHERE genres.id = 3;
+
+    async getArtistsGenre(req, res, next) {
+    try {
+      const id = Number.parseInt(req.params.id, 10);
+      res.locals.artists = await Artist.findOne({
+          include: [{
+          model: Genre,
+          where: {
+            3: artist_genre_xref.artist_id
+          },
+          rejectOnEmpty: false,
+        }]
+      });
+      next();
+    } catch (e) {
+      next(e)
+    }
+  },
+
     async create(req, res, next) {
     try {
       const { name } = req.body;

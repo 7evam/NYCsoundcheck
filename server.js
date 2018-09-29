@@ -5,6 +5,7 @@ const genreRouter   = require('./routes/genreRouter');
 const bodyParser  	= require('body-parser'); 
 const fetch 		= require('node-fetch');
 const reactViews    = require('express-react-views');
+const path           = require('path');
 
 const PORT = process.env.PORT || 3100;
 
@@ -17,12 +18,14 @@ app.engine('jsx', reactViews.createEngine());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.static(path.join('public')));
+app.use(express.static(path.join('public')));
+
+
 app.use('/artists', artistRouter);
 app.use('/genres', genreRouter);
 
 app.get('/', (req, res) => {
-   res.send('hello world');
+   res.render('home')
  });
 
 //fetch api

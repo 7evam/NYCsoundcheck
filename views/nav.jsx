@@ -9,7 +9,6 @@ const Nav = () => (
         <i className="fas fa-music fa-fw fa-2x" />
         NYC Soundcheck
       </a>
-
     </div>
     <div className="navbar-menu">
       <div className="navbar-start">
@@ -19,9 +18,24 @@ const Nav = () => (
         <a className="navbar-item" role="menuitem" href="/artists">
             Artists
         </a>
-                <a className="navbar-item" role="menuitem" href="/genres">
-            Genres
-        </a>
+         <div className="navbar-item has-dropdown is-hoverable">
+              <div className="navbar-link" role="menuitem">
+                Genres
+              </div>
+              <div className="navbar-dropdown">
+                <a className="navbar-item" href="/profile">Funk</a>
+                <hr className="navbar-divider" />
+                <a className="navbar-item" href="/profile">Soul</a>
+                <hr className="navbar-divider" />
+                <a className="navbar-item" href="/profile">Alt-rock</a>
+                <hr className="navbar-divider" />
+                <a className="navbar-item" href="/profile">Experimental</a>
+                <hr className="navbar-divider" />
+                <a className="navbar-item" href="/profile">Jazz</a>
+                <hr className="navbar-divider" />
+                <a className="navbar-item" href="/auth/login?_method=DELETE">Hip-hop</a>
+              </div>
+            </div>
       </div>
 
       <div className="navbar-end">
@@ -29,8 +43,7 @@ const Nav = () => (
          
             <div className="navbar-item has-dropdown is-hoverable">
               <div className="navbar-link" role="menuitem">
-                <i className="fas fa-user fa-fw" />
-          
+                Genres
               </div>
               <div className="navbar-dropdown">
                 <a className="navbar-item" href="/profile">Profile</a>
