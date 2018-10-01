@@ -16,17 +16,17 @@ console.log(putURL + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
      <form method="POST" action={putURL}>
           <div className="field">
             <div className="control">
-              <input className="input" name="name" type="text" placeholder="Artist Name"/>
+              <input className="input" name="name" type="text" placeholder="Artist Name" value = {artists.name}/>
             </div>
           </div>
            <div className="field">
             <div className="control">
-              <input className="input" name="img_url" type="text" placeholder="Image URL"/>
+              <input className="input" name="img_url" type="text" placeholder="Image URL"value = {artists.img_url}/>
             </div>
           </div>
            <div className="field">
             <div className="control">
-              <input className="input" name="desc" type="text" placeholder="Description"/>
+              <textarea className="input" name="desc" type="text" placeholder="Description" value = {artists.desc}/>
             </div>
           </div>
 

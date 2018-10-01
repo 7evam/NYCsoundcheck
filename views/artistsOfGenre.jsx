@@ -5,8 +5,9 @@ import DefaultLayout from './DefaultLayout';
 
 // Contrived example to show how one might use Flow type annotations
 
-function index({artists,genres, title}) {
-		
+function index({artists}) {
+			
+
 
   return (
   	<DefaultLayout>
@@ -25,6 +26,9 @@ Welcome to REACT VIEWS
 
    		<div className="column is-one-third">
     	 <a href={'http://localhost:3100/artists/'+artist.id} className='title'>{artist.name}</a> <img src={artist.img_url} />
+     {/*	<p>{(artist.genres).map((g) =>
+     		{g.name}
+     	)}</p> */}
      	</div>	
 	)}	
 </div>	 
@@ -39,7 +43,3 @@ Welcome to REACT VIEWS
 }
 
 module.exports = index;
-
-//everything goes into props
-
-//or you can restructure {artists}

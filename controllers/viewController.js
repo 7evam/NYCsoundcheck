@@ -20,7 +20,14 @@ module.exports = {
   },
 
     showArtistsOfGenre(req, res) {
-    res.json(res.locals)
+     res.format({
+        json(){
+          res.json(res.locals);
+        },
+        html(){
+          res.render('artistsOfGenre');
+        }
+      });
   },
 
   showOneAlbum(req, res) {
