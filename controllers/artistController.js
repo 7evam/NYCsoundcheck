@@ -66,7 +66,7 @@ module.exports = {
 
     async update(req, res, next) {
     try {
-      const id = parseInt(req.params.id, 10);
+      const id = Number.parseInt(req.params.id, 10);
       const { name, desc, img_url } = req.body;
       const [,artist] = await Artist.update({
         name,

@@ -27,6 +27,10 @@ module.exports = {
     res.json(res.locals)
   },
 
+  showAllShows(req,res){
+    res.json(res.locals)
+  },
+
     showArtists(req, res) {
       res.format({
         json(){

@@ -3,9 +3,11 @@ const logger      	= require('morgan');
 const artistRouter 	= require('./routes/artistRouter');
 const genreRouter   = require('./routes/genreRouter');
 const bodyParser  	= require('body-parser'); 
+const methodOverride = require('method-override');
 const fetch 		= require('node-fetch');
 const reactViews    = require('express-react-views');
 const path           = require('path');
+
 
 const PORT = process.env.PORT || 3100;
 
@@ -16,6 +18,7 @@ app.engine('jsx', reactViews.createEngine());
 
 
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join('public')));

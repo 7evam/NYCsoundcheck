@@ -4,7 +4,7 @@ const PropTypes = require('prop-types');
 import DefaultLayout from './DefaultLayout';
 
 export default ({  }) => (
-  <DefaultLayout title="Books!">
+  <DefaultLayout title="">
      <div>
      <div className="columns">
      <div className="column is-one-third">

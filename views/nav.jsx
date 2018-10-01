@@ -12,9 +12,6 @@ const Nav = () => (
     </div>
     <div className="navbar-menu">
       <div className="navbar-start">
-        <a className="navbar-item" role="menuitem" href="/">
-            Home
-        </a>
         <a className="navbar-item" role="menuitem" href="/artists">
             Artists
         </a>
@@ -43,7 +40,7 @@ const Nav = () => (
          
             <div className="navbar-item is-hoverable">
              
-                <a className = "navbar-link" href="/newArtist">Add New Artist</a>
+                <a className = "navbar-item newArtist" href="/newArtist">Add New Artist <i class="fas fa-fw fa-plus"></i></a>
               
             </div>
          

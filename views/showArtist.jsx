@@ -5,7 +5,7 @@ import DefaultLayout from './DefaultLayout';
 
 // Contrived example to show how one might use Flow type annotations
 
-function showArtist({artists, id, albums}) {
+function showArtist({artists, id, albums, shows}) {
 	//get artist genres into a string
 	let artistGenres = [];
 	for(let i=0;i<artists.genres.length;i++){
@@ -20,8 +20,12 @@ function showArtist({artists, id, albums}) {
 		showAlbumInfo = (<div><p>{albums.name}</p> <img className ="albumImage" src={albums.img_url} /> </div>)
 		//console.log("Number of albums" + albums.name)
 		// showAlbumInfo = <img class="albumImage" src={artists.img_url} />
-	}
+	};
 
+  let artistID = artists.id
+  const deleteURL ="/artists/" + artistID.toString()+ "?_method=DELETE"
+  console.log("---------->>>>>>>>"+deleteURL);
+  console.log("~~~~~~~~~~~>>>>>>"+shows.venue)
 
   return (
   	<DefaultLayout>
@@ -44,13 +48,18 @@ Welcome to REACT VIEWS
 
       	<hr />
       	<h4>Upcoming Shows</h4>
+        {shows.date}
 
-
-      
-      
+  
    </div>
+
+
       		
-      	
+    <form method="POST" action={deleteURL}>
+          <div className="control">
+            <button className="button is-primary">Submit</button>
+          </div>
+    </form>
  
   
      
