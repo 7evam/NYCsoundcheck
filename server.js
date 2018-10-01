@@ -35,6 +35,8 @@ app.get('/newArtist', (req, res) => {
    res.render('newArtist')
  });
 
+
+
 //fetch api
 // app.get('/',(req,res)=> {
 

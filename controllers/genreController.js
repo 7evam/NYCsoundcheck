@@ -38,18 +38,15 @@ module.exports = {
     async getArtistsGenre(req, res, next) {
     try {
       const id = Number.parseInt(req.params.id, 10);
-      res.locals.artists = await Artist.findOne({
-          include: [{
-          model: Genre,
-          where: {
-            3: artist_genre_xref.artist_id
-          },
-          rejectOnEmpty: false,
-        }]
+      const { artists } = await Genre.findOne({
+        where: { id },
+        include: [Artist],
       });
+      res.locals.artists = artists;
       next();
     } catch (e) {
       next(e)
+
     }
   },
 
@@ -64,6 +61,7 @@ module.exports = {
       console.error(e);
       next(e)
     }
+
   },
     async update(req, res, next) {
     try {

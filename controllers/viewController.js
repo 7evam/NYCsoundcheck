@@ -42,6 +42,10 @@ module.exports = {
       });
   },
 
+  showEditPage(req, res) {
+   res.render('editArtist')
+},
+
     showGenres(req, res) {
     res.json(res.locals)
   },
@@ -57,7 +61,7 @@ module.exports = {
   },
 
     handleUpdate(req, res) {
-    res.json(res.locals);
+    res.send('it appears an update was made')
   },
 
     badUpdate(req, res) {

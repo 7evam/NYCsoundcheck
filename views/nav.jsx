@@ -9,6 +9,11 @@ const Nav = () => (
         <i className="fas fa-music fa-fw fa-2x" />
         NYC Soundcheck
       </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+  <span aria-hidden="true"></span>
+</a>
     </div>
     <div className="navbar-menu">
       <div className="navbar-start">

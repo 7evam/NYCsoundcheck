@@ -22,10 +22,19 @@ function showArtist({artists, id, albums, shows}) {
 		// showAlbumInfo = <img class="albumImage" src={artists.img_url} />
 	};
 
+    let showInfo = "uh oh default";
+  if(shows==null){
+    showInfo = "No upcoming shows listed!"
+  } else {
+    showInfo = (<div><p>{shows.venue}</p> <p>{shows.date}</p> </div>)
+    //console.log("Number of albums" + albums.name)
+    // showAlbumInfo = <img class="albumImage" src={artists.img_url} />
+  };
+
   let artistID = artists.id
   const deleteURL ="/artists/" + artistID.toString()+ "?_method=DELETE"
+  const editURL ="/artists/" + artistID.toString()+"/edit";
   console.log("---------->>>>>>>>"+deleteURL);
-  console.log("~~~~~~~~~~~>>>>>>"+shows.venue)
 
   return (
   	<DefaultLayout>
@@ -48,7 +57,7 @@ Welcome to REACT VIEWS
 
       	<hr />
       	<h4>Upcoming Shows</h4>
-        {shows.date}
+        {showInfo}
 
   
    </div>
@@ -57,9 +66,16 @@ Welcome to REACT VIEWS
       		
     <form method="POST" action={deleteURL}>
           <div className="control">
-            <button className="button is-primary">Submit</button>
+            <button className="button is-primary">Delete</button>
           </div>
     </form>
+
+     <form action={editURL}>
+          <div className="control">
+            <button className="button is-primary">Edit</button>
+          </div>
+    </form>
+
  
   
      
