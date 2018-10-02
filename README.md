@@ -40,3 +40,6 @@ This project features a controller, a router, models, data and views rendered in
 # Feature List
 
 This project includes an index page for all artists, a show page for each artist that includes their description, albums, and upcoming shows, and a page for all partists of some particular genres. There is also CRUD functionality for artists.
+
+# Video Demonstration
+https://youtu.be/sK9vifbTAWI
