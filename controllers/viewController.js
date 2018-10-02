@@ -1,6 +1,6 @@
 module.exports = {
 
-    showOneArtist(req, res) {
+     showOneArtist(req, res) {
       res.format({
         json(){
           res.json(res.locals);
@@ -11,7 +11,7 @@ module.exports = {
       });
   },
 
-  showArtistsGenre(req, res) {
+ showArtistsGenre(req, res) {
     res.json(res.locals)
   },
 
@@ -68,7 +68,7 @@ module.exports = {
   },
 
     handleUpdate(req, res) {
-    res.send('it appears an update was made')
+    res.redirect('artists')
   },
 
     badUpdate(req, res) {
@@ -77,12 +77,11 @@ module.exports = {
   },
 
     handleDestroy(req, res) {
-    res.send('Destroyed!')
+    res.redirect('artists')
   },
 
    handleCreateArtist(req, res) {
-    console.log(res.locals);
-    res.send('you did it');
+    res.redirect('artists')
     // res.send(`/artists/${res.locals.id}`)
   },
     handleCreateGenre(req, res) {

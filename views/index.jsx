@@ -10,15 +10,6 @@ function index({artists,genres, title}) {
 
   return (
   	<DefaultLayout>
-   
-   
-      <p>
-Welcome to REACT VIEWS
-      </p>
-
-
-	
-  
 <div className="container is-fluid">
   <div className="columns is-multiline">
 		{artists.map((artist) => 

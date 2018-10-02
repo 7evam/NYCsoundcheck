@@ -9,13 +9,13 @@ const Nav = () => (
         <i className="fas fa-music fa-fw fa-2x" />
         NYC Soundcheck
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target='navMenu'>
   <span aria-hidden="true"></span>
   <span aria-hidden="true"></span>
   <span aria-hidden="true"></span>
 </a>
     </div>
-    <div className="navbar-menu">
+    <div className="navbar-menu" id='navMenu'>
       <div className="navbar-start">
         <a className="navbar-item" role="menuitem" href="/artists">
             Artists
@@ -25,17 +25,17 @@ const Nav = () => (
                 Genres
               </div>
               <div className="navbar-dropdown">
-                <a className="navbar-item" href="/profile">Funk</a>
+                <a className="navbar-item" href="/genres/1/artists">Funk</a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item" href="/profile">Soul</a>
+                <a className="navbar-item" href="/genres/3/artists">Jazz</a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item" href="/profile">Alt-rock</a>
+                <a className="navbar-item" href="/genres/4/artists">Soul</a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item" href="/profile">Experimental</a>
+                <a className="navbar-item" href="/genres/11/artists">R&B</a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item" href="/profile">Jazz</a>
+                <a className="navbar-item" href="/genres/2/artists">Experimental</a>
                 <hr className="navbar-divider" />
-                <a className="navbar-item" href="/auth/login?_method=DELETE">Hip-hop</a>
+                <a className="navbar-item" href="/genres/6/artists">Alt-Rock</a>
               </div>
             </div>
       </div>
@@ -47,19 +47,6 @@ const Nav = () => (
              
                 <a className = "navbar-item newArtist" href="/newArtist">Add New Artist <i class="fas fa-fw fa-plus"></i></a>
               
-            </div>
-         
-            <div className="navbar-item">
-              <div className="field is-grouped">
-                <p className="control">
-                  <a className="button is-dark" href="/auth/login">
-                    <span className="icon">
-                      <i className="fas fa-sign-in-alt" />
-                    </span>
-                    <span>Log In</span>
-                  </a>
-                </p>
-              </div>
             </div>
       </div>
     </div>

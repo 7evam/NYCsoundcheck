@@ -13,6 +13,7 @@ const Artist = db.define('artist', {
   name: {
     type:      Sequelize.STRING(128),
     allowNull: false,
+    unique: true,
   },
   desc: {
   	type: 		Sequelize.TEXT,
@@ -60,14 +61,14 @@ const Show = db.define('show', {
 Show.belongsToMany(Artist, { through: 'artist_show_xref'});
 Artist.belongsToMany(Show, { through: 'artist_show_xref'});
 
-
-
 Genre.belongsToMany(Artist, { through: 'artist_genre_xref'});
 Artist.belongsToMany(Genre, { through: 'artist_genre_xref'});
 
 
 Artist.hasMany(Album);
 Album.belongsTo(Artist);
+
+
 
 
 module.exports = {

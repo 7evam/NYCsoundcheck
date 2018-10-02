@@ -5,16 +5,15 @@ import DefaultLayout from './DefaultLayout';
 
 // Contrived example to show how one might use Flow type annotations
 
-function index({artists}) {
+function index({artists, genres}) {
 			
-
 
   return (
   	<DefaultLayout>
    
    
-      <p>
-Welcome to REACT VIEWS
+      <p class='title'>
+{genres.name} Artists
       </p>
 
 

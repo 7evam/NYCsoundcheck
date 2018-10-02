@@ -31,9 +31,9 @@ module.exports = {
 
   //name,img_url,artist
   albums:[
-  	['Mango City', 'https://f4.bcbits.com/img/a3147368541_10.jpg',7],
-  	['All Flowers In Time', 'https://f4.bcbits.com/img/a0708663422_10.jpg',5],
-  	['There\'s a Virus Going On','https://f4.bcbits.com/img/a0703511586_10.jpg',1],
+    ['Mango City', 'https://f4.bcbits.com/img/a3147368541_10.jpg',7],
+    ['All Flowers In Time', 'https://f4.bcbits.com/img/a0708663422_10.jpg',5],
+    ['There\'s a Virus Going On','https://f4.bcbits.com/img/a0703511586_10.jpg',1],
     ['Go To Bed Standing Up','https://i1.sndcdn.com/artworks-000209628840-dh3giq-t500x500.jpg',2],
     ['LVNDR TWN', 'https://f4.bcbits.com/img/a0918581716_10.jpg', 3],
     ['L\'Rain','https://f4.bcbits.com/img/a0453705262_16.jpg', 4],
@@ -45,9 +45,10 @@ module.exports = {
     ],
 //date, venue, [artists in show]
   shows:[
- 	 ['2018-10-26', 'Coney Island Baby', [1,3]],
- 	 ['2018-11-06', 'C\'mon Everybody', [5]],
- 	 ['2018-11-08', 'Pianos', [2,6,7]]
- 	]
+   ['2018-10-26', 'Coney Island Baby', [1,3]],
+   ['2018-11-06', 'C\'mon Everybody', [5]],
+   ['2018-11-08', 'Pianos', [2,6,7]],
+   ['2018-11-08', 'Mercury Lounge', [9,11]],
+  ]
 
 }

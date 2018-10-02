@@ -6,7 +6,8 @@ module.exports = {
     try {
       const id = Number.parseInt(req.params.id, 10);
       res.locals.albums = await Album.findOne({
-        where: { artist_id: req.params.id },
+        where: { id },
+        include: [Artist],
         rejectOnEmpty: false,
       });
       next();

@@ -6,6 +6,7 @@ import DefaultLayout from './DefaultLayout';
 // Contrived example to show how one might use Flow type annotations
 
 function showArtist({artists, id, albums, shows}) {
+
 	//get artist genres into a string
 	let artistGenres = [];
 	for(let i=0;i<artists.genres.length;i++){
@@ -34,20 +35,27 @@ function showArtist({artists, id, albums, shows}) {
   let artistID = artists.id
   const deleteURL ="/artists/" + artistID.toString()+ "?_method=DELETE"
   const editURL ="/artists/" + artistID.toString()+"/edit";
-  console.log("---------->>>>>>>>"+deleteURL);
 
   return (
   	<DefaultLayout>
-   
-   
-      <p>
-Welcome to REACT VIEWS
-      </p>
+  
 
       <div className='content'>
       	<p className='title'>{artists.name}</p>
       	<img className ="showImage" src={artists.img_url} />
       	<p class='desc'>{artists.desc}</p>
+         <form className='form' method="POST" action={deleteURL}>
+          <div className="control">
+            <button className="button is-primary">Delete</button>
+          </div>
+    </form>
+
+     <form className='form' action={editURL}>
+          <div className="control">
+            <button className="button is-primary">Edit</button>
+          </div>
+    </form>
+
       	<hr />
       	<h4>Genres:</h4>
       	{artistGenres}
@@ -64,18 +72,7 @@ Welcome to REACT VIEWS
 
 
       		
-    <form method="POST" action={deleteURL}>
-          <div className="control">
-            <button className="button is-primary">Delete</button>
-          </div>
-    </form>
-
-     <form action={editURL}>
-          <div className="control">
-            <button className="button is-primary">Edit</button>
-          </div>
-    </form>
-
+   
  
   
      

@@ -31,7 +31,7 @@ const { artists, genres, albums, shows } = require('../data');
 
 
   await Promise.all([
-  	Album.bulkCreate(albums.map(([name, img_url, artist_id]) => ({name, img_url, artist_id}))),
+  	Album.bulkCreate(albums.map(([name, img_url, artist_name]) => ({name, img_url, artist_name}))),
     Promise.all(shows.map( async ([date, venue, artists]) => {
     	//creates shows and makes associations 
     	const newShow = await Show.create({date, venue})

@@ -6,7 +6,7 @@ import DefaultLayout from './DefaultLayout';
 function editArtist ({ artists }) {
   const artistID = artists.id;
 const putURL ="/artists/" + artistID.toString()+ "/edit?_method=PUT";
-console.log(putURL + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
   return (
   <DefaultLayout title="">
      <div>
