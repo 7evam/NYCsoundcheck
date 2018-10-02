@@ -1,6 +1,6 @@
-const express = require('express');
-const views   = require('../controllers/viewController');
-const genres = require('../controllers/genreController');
+const express 	= require('express');
+const views		= require('../controllers/viewController');
+const genres 	= require('../controllers/genreController');
 
 
 const genreRouter = express.Router({ mergeParams: true });
