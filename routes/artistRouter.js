@@ -27,4 +27,4 @@ artistRouter.use(views.showJSON, views.notFound);
 
 module.exports = artistRouter;
 
- // .get(artists.getOneArtist, albums.getOneAlbum, views.showOneArtist, views.showOneAlbum)
+// .get(artists.getOneArtist, albums.getOneAlbum, views.showOneArtist, views.showOneAlbum)

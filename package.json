@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "express": "^4.16.3",
     "express-react-views": "^0.10.5",
     "jsx": "^0.9.89",

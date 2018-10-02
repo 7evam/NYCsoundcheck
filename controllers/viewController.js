@@ -68,7 +68,7 @@ module.exports = {
   },
 
     handleUpdate(req, res) {
-    res.redirect('artists')
+    res.redirect('.')
   },
 
     badUpdate(req, res) {
@@ -77,11 +77,11 @@ module.exports = {
   },
 
     handleDestroy(req, res) {
-    res.redirect('artists')
+    res.redirect('.');
   },
 
    handleCreateArtist(req, res) {
-    res.redirect('artists')
+    res.redirect('./artists');
     // res.send(`/artists/${res.locals.id}`)
   },
     handleCreateGenre(req, res) {
