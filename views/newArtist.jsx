@@ -1,10 +1,10 @@
 const React = require('react');
 const PropTypes = require('prop-types');
 
-import DefaultLayout from './DefaultLayout';
+import defaultLayout from './defaultLayout';
 
 export default ({  }) => (
-  <DefaultLayout title="">
+  <defaultLayout title="">
      
      <div className="columns">
      <div className="column is-one-third form">
@@ -37,5 +37,5 @@ export default ({  }) => (
 
   
 
-      </DefaultLayout>
+      </defaultLayout>
 )

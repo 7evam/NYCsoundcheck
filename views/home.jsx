@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-import DefaultLayout from './DefaultLayout';
+import defaultLayout from './defaultLayout';
 
 
 // Contrived example to show how one might use Flow type annotations
@@ -10,7 +10,7 @@ function home() {
 
 
   return (
-  	<DefaultLayout>
+  	<defaultLayout>
   	<p className='title'>NYC Soundcheck</p>
    <img className='homeImage' src ="http://5d48184523c8a489ed05-91a4b8ed85c04e5358f91889505a4163.r43.cf1.rackcdn.com/24/6/large.jpg" />
    
@@ -23,7 +23,7 @@ function home() {
   
      
 
-</DefaultLayout>
+</defaultLayout>
   );
 
 }

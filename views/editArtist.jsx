@@ -1,6 +1,6 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-import DefaultLayout from './DefaultLayout';
+import defaultLayout from './defaultLayout';
 
 
 function editArtist ({ artists }) {
@@ -8,7 +8,7 @@ function editArtist ({ artists }) {
 const putURL ="/artists/" + artistID.toString()+ "/edit?_method=PUT";
 
   return (
-  <DefaultLayout title="">
+  <defaultLayout title="">
      <div>
      <div className="columns">
      <div className="column is-one-third">
@@ -37,7 +37,7 @@ const putURL ="/artists/" + artistID.toString()+ "/edit?_method=PUT";
     </div>
     </div>
     </div>
-      </DefaultLayout>
+      </defaultLayout>
       );
 }
 
