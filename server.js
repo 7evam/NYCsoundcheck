@@ -1,12 +1,12 @@
 require('dotenv').config
-const express 		= require ('express');
-const logger      	= require('morgan');
-const artistRouter 	= require('./routes/artistRouter');
-const genreRouter   = require('./routes/genreRouter');
-const bodyParser  	= require('body-parser'); 
+const express 	     = require ('express');
+const logger      	 = require('morgan');
+const artistRouter 	 = require('./routes/artistRouter');
+const genreRouter    = require('./routes/genreRouter');
+const bodyParser  	 = require('body-parser');
 const methodOverride = require('method-override');
-const fetch 		= require('node-fetch');
-const reactViews    = require('express-react-views');
+const fetch          = require('node-fetch');
+const reactViews     = require('express-react-views');
 const path           = require('path');
 
 

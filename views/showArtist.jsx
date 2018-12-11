@@ -1,12 +1,11 @@
 const React = require('react');
 const PropTypes = require('prop-types');
-import defaultLayout from './defaultLayout';
+import DefaultLayout from './DefaultLayout';
 
 
 // Contrived example to show how one might use Flow type annotations
 
-function showArtist({artists, id, albums, shows}) {
-
+function ShowArtist({artists, id, albums, shows}) {
 	//get artist genres into a string
 	let artistGenres = [];
 	for(let i=0;i<artists.genres.length;i++){
@@ -37,9 +36,7 @@ function showArtist({artists, id, albums, shows}) {
   const editURL ="/artists/" + artistID.toString()+"/edit";
 
   return (
-  	<defaultLayout>
-  
-
+  	<DefaultLayout>
       <div className='content'>
       	<p className='title'>{artists.name}</p>
       	<img className ="showImage" src={artists.img_url} />
@@ -49,13 +46,11 @@ function showArtist({artists, id, albums, shows}) {
             <button className="button is-primary">Delete</button>
           </div>
     </form>
-
      <form className='form' action={editURL}>
           <div className="control">
             <button className="button is-primary">Edit</button>
           </div>
     </form>
-
       	<hr />
       	<h4>Genres:</h4>
       	{artistGenres}
@@ -66,20 +61,10 @@ function showArtist({artists, id, albums, shows}) {
       	<hr />
       	<h4>Upcoming Shows</h4>
         {showInfo}
-
-  
    </div>
-
-
-      		
-   
- 
-  
-     
-
-</defaultLayout>
+</DefaultLayout>
   );
 
 }
 
-module.exports = showArtist;
+module.exports = ShowArtist;

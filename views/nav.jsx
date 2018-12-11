@@ -41,12 +41,12 @@ const Nav = () => (
       </div>
 
       <div className="navbar-end">
-       
-         
+
+
             <div className="navbar-item is-hoverable">
-             
+
                 <a className = "navbar-item newArtist" href="/newArtist">Add New Artist <i class="fas fa-fw fa-plus"></i></a>
-              
+
             </div>
       </div>
     </div>
@@ -58,3 +58,12 @@ const Nav = () => (
 
 
 export default Nav;
+
+
+
+
+
+
+
+
+

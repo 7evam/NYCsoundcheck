@@ -56,7 +56,6 @@ module.exports = {
         desc,
         img_url,
       });
-      //res.locals.artist = newArtist; //maybe
       next()
     } catch (e) {
       console.error(e);
@@ -67,14 +66,13 @@ module.exports = {
     async update(req, res, next) {
     try {
       const id = Number.parseInt(req.params.id, 10);
-      console.log("HERES THE ID RIGHT HERE>>>>>>>>>>>>>>>>>>>" + req.params.id)
       const { name, desc, img_url } = req.body;
       const [,artist] = await Artist.update({
         name,
         desc,
         img_url,
       }, {
-        where: {id}
+        where: { id }
       });
       next()
     } catch (e) {
@@ -82,6 +80,7 @@ module.exports = {
       next(e)
     }
   },
+
     async destroy(req, res, next) {
     try {
       const id = parseInt(req.params.id, 10)
